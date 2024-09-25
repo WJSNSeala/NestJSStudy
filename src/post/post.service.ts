@@ -28,7 +28,7 @@ export class PostService {
     return post;
   }
 
-  async update(id: number, updatePostDto: UpdatePostDto) {
+  async update(id: string, updatePostDto: UpdatePostDto) {
     const updatedPost = await this.postModel
       .findByIdAndUpdate(id, updatePostDto, { runValidators: true, new: true })
       .exec();
